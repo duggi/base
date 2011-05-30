@@ -1,0 +1,375 @@
+/*
+ * base
+ * http://bigredswitch.com/
+ *
+ * Copyright 2011 Doug Lee
+ * Dual licensed under the MIT or GPL Version 2 licenses
+ * Date: Sat May 28, 2011
+ *
+ *
+ * Portions from HTML5 Boilerplate
+ * http://html5boilerplate.com/
+ * Copyright Paul Irish
+ * Dual licensed under MIT and GPL
+ *
+ */
+
+
+/* ---------------------------------------------- GLOBAL FORMATTING */
+html {-webkit-font-smoothing: antialiased;}
+
+body {
+  font-size: 14px;
+  font-family: 'Myriad Pro', 'Calibri', 'Lucida Grande', 'Lucida Sans Unicode',
+                Helvetica, Arial, Verdana, sans-serif;
+  color: #333;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 42px;
+  color: #454c53;
+  font-weight: normal;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 16px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+a {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+ul {margin-left:30px;}
+ol {margin-left:30px;list-style-type:decimal;}
+
+small {font-size:12px;}
+strong, th {font-weight:bold;}
+td, td img {vertical-align:top;}
+sub {vertical-align:sub;font-size:10px;}
+sup {vertical-align:super;font-size:10px;}
+pre {padding:15px;white-space:pre;white-space:pre-wrap;white-space:pre-line;word-wrap:break-word;}
+
+label, input[type=button], input[type=submit], button {cursor:pointer;}
+input[type="radio"] {vertical-align:text-bottom;}
+input[type="checkbox"] {vertical-align:bottom;*vertical-align:baseline;}
+textarea {
+  font-size: 14px;
+  font-family: 'Myriad Pro','Lucida Grande', 'Lucida Sans Unicode', Helvetica,
+                Arial, Verdana, sans-serif;
+  color: #333;
+}
+
+button {
+  font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+}
+
+blockquote {
+  padding: 10px;
+  margin: 20px 0;
+  background: #ffd;
+  color: #000;
+  border: 1px solid #ddc;
+}
+
+pre, code, kbd, samp {font-family:monospace, sans-serif;}
+
+
+/* ---------------------------------------------- LAYOUT AND CONTAINERS */
+.boundary {
+  margin: 0 auto;
+  width: 960px;
+  position: relative;
+}
+.boundary:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.boundary {zoom:1;}
+
+/*
+  article#wrapper
+  |
+  |_ header#header
+  |  |_ div.boundary
+  |
+  |_ section#main
+  |  |_ div.boundary
+  |
+  |_ footer#footer
+     |_ div.boundary
+ */
+
+#header:after, #header > div:after,
+#main:after, #main > div:after,
+#footer:after, #footer > div:after {
+  content:".";display:block;height:0;clear:both;visibility:hidden;
+}
+#header, #header > div,
+#main, #main > div,
+#footer, #footer > div {
+  zoom: 1;
+}
+
+#header {
+  font-size: 12px;
+  background: #ffc;
+}
+#header > div {
+  padding: 10px 0;
+}
+
+#main {}
+#main > div {
+  padding: 20px 0;
+}
+
+#footer {
+  font-size: 12px;
+  background: #ccc;
+}
+#footer > div {
+  padding: 20px 0;
+}
+
+
+/* ---------------------------------------------- COPY BLOCKS */
+.copy {}
+.copy h2 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.copy p {
+  padding: 5px;
+  margin: 5px 0;
+}
+
+
+/* ---------------------------------------------- SPRITE */
+.sprite {
+  background: url('../img/sprites.png') -40px 0 no-repeat;
+  width: 27px;
+  height: 27px;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.sprite.sprite-newtag {
+  background-position: -40px 0;
+  width: 45px;
+  height: 20px;
+}
+
+
+/* ---------------------------------------------- BUTTONS */
+.button {
+  background: #fff;
+  background: -moz-linear-gradient(top,  #fff,  #ddd);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+  color: #666;
+  text-shadow: 1px 1px 0 #ddd;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: 1px solid #ccc;
+  border-color: #ccc #999 #999 #ccc;
+  padding: 3px 15px;
+  font-size: 12px;
+  position: relative;
+}
+.button[disabled] {
+  background: #ccc;
+  text-shadow: none;
+}
+
+.like-button {
+  padding: 5px 10px;
+  padding-left: 25px;
+}
+.like-button-count {
+  font-size: 12px;
+  margin-left: 5px;
+  padding: 2px 3px;
+  background: #333;
+  color: #fff;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  min-width: 14px;
+}
+.like-button-count > .tail {
+  padding: 0 !important;
+  position: absolute;
+  top: 5px;
+  left: -3px;
+  width: 4px;
+  height: 7px;
+  background: url('../img/sprites.png') -120px 0 no-repeat;
+}
+.sprite.sprite-like {
+  background-position: -90px 0;
+  width: 13px;
+  height: 12px;
+  position: absolute;
+  top: 4pxw
+  left: 7px;
+}
+
+
+/* ---------------------------------------------- BUBBLE */
+.bubble {
+  background: #def;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #69c;
+  position: relative;
+}
+.bubble > div {
+  padding: 10px;
+}
+.bubble > .tail {
+  padding: 0 !important;
+  position: absolute;
+  top: 8px;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: url('../img/sprites.png') -60px -20px no-repeat;
+}
+.bubble > .tail.tail-top { /* etc for right, bottom */
+  background-position: 0 -20px;
+  left: 15px;
+  top: -12px;
+}
+
+.bubblet {
+  background: #def;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #69c;
+  position: relative;
+}
+.bubblet > div {
+  padding: 10px;
+}
+.bubblet > .tail {
+  padding: 0 !important;
+  position: absolute;
+  top: 8px;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: url('../img/sprites.png') -60px -20px no-repeat;
+}
+.bubblet > .tail.tail-top { /* etc for right, bottom */
+  background-position: 0 -20px;
+  left: 15px;
+  top: -12px;
+}
+
+
+
+
+.pic-180 {
+  width: 180px; height: 180px;
+}
+.pic-50 {
+  width: 50px; height: 50px;
+  margin-right: 10px;
+  border: 5px solid #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.pic-50 > img {
+  -moz-box-shadow: 0px 0px 1px #000;
+  -webkit-box-shadow: 0px 0px 1px #000;
+  box-shadow: 0px 0px 1px #000;
+}
+.pic-30 {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+
+.bug {
+  min-width: 10px;
+  height: 10px;
+  background: #900;
+  color: #fff;
+  padding: 3px;
+  line-height: .95em;
+  font-size: 10px;
+  text-align: center;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+
+/* ---------------------------------------------- SLUG */
+.slug {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.slug-prime {
+  background: #ffc;
+}
+.slug-timestamp {
+  font-size: 10px;
+  color: #666;
+  margin-right: 10px;
+}
+.slug .pic-50 {
+  box-shadow: 1px 1px 1px #999;
+}
+.slug-content {
+  padding: 5px;
+}
+.slug > .close {
+  width: 8px; height: 8px;
+  background: url('../img/sprites.png') 0 0 no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------- MINICARD */
+.minicard {
+  background: #fff;
+  padding: 3px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.minicard-info {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.minicard-info > span {
+  font-size: 10px;
+  display: block;
+}
