@@ -9,7 +9,7 @@
      ~ lightweight html5 shell ~
 -------------------------------------------------------------------------------
 ```
-[descr]
+A lightweight, easy to use, browser proof base for delicious webapp soup
 
 ## HTML
 
